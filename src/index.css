@@ -1,0 +1,77 @@
+:root {
+  --netflix-red: #e50914;
+  --bg-color: #141414;
+  --text-color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hide scrollbar for horizontal scrolling rows in Netflix UI */
+.row-posters::-webkit-scrollbar {
+  display: none;
+}
+.row-posters {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+/* Navbar utilities */
+.nav-link {
+  color: #ccc;
+  font-size: 15px;
+  text-decoration: none;
+}
+.nav-link:hover {
+  text-decoration: underline;
+  color: white;
+}
+.nav-link.active {
+  color: white;
+  font-weight: bold;
+}
+
+/* Basic hover effects for Movie Cards */
+.movie-card {
+  position: relative;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.05) !important;
+  z-index: 10;
+}
+
+/* Simple modal transitions */
+.modal-overlay {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.modal-overlay.open {
+  opacity: 1;
+}
+
+.modal-content {
+  transition: transform 0.2s ease;
+}
+.modal-content.open {
+  transform: scale(1);
+}
